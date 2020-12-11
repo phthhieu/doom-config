@@ -48,3 +48,11 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+;; JS development
+(package! prettier-js)
+
+;; Using git better
+(package! git-link)
+(package! git-timemachine)
+(package! git-messenger)
