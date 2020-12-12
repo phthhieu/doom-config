@@ -63,6 +63,17 @@
 
 (global-set-key (kbd "C-<backspace>") 'switch-to-last-buffer)
 
+(setq avy-all-windows t)
+
+;; Custom bindings
+(map! :nv "s" #'evil-avy-goto-word-or-subword-1)
+
+(add-hook! js-mode prettier-js-mode)
+(add-hook! web-mode prettier-js-mode)
+
+;; To make typescript work
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+
 ;; General config
 (load! "org-mode")
 ;; Load custom config for EH projects

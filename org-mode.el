@@ -1,5 +1,6 @@
 ;;; org-mode.el -*- lexical-binding: t; -*-
 
+
 (defun git-branch-by-title (title link)
   "Auto generate git branch by title"
   (let* ((dashed-title (s-dashed-words title))
@@ -20,7 +21,7 @@
 (after! org
   (setq evil-org-key-theme '(navigation insert textobjects additional calendar todo))
   (setq org-agenda-files '("~/Dropbox/notes"))
-
+  (require 'org-download);; Need to install org download via M-x package-install RET org-download RET
   (setq org-capture-templates
     `(
        ("n"
@@ -40,7 +41,6 @@
   (setq
     org-download-image-org-width 300
     org-download-delete-image-after-download t
-    org-download-link-format "[[file:./images/%s]]\n"
     org-download-method 'directory)
   (setq-default org-download-image-dir "./images"))
 
@@ -61,5 +61,5 @@
         ""
         :immediate-finish t
         :file-name "%<%Y-%m-%d>"
-        :head "#+TITLE: %<%Y-%m-%d>\n#+TODO: TODO IN-PROGRESS IN-REVIEW | DONE\n\n* TODO Check Calendar")))
+        :head "#+TITLE: %<%Y-%m-%d>\n#+TODO: TODO IN-PROGRESS IN-REVIEW | DONE\n\n* TODO Check Calendar\n* TODO Check mailbox https://mail.google.com/mail/u/1/#inbox")))
   )

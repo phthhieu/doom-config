@@ -49,6 +49,9 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+;; Disable packages I dont wanna use
+(package! evil-snipe :disable t)
+
 ;; JS development
 (package! prettier-js)
 
