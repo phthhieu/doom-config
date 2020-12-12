@@ -61,17 +61,23 @@
   (interactive)
   (switch-to-buffer nil))
 
+;; To go to previous buffer pretty easy
 (global-set-key (kbd "C-<backspace>") 'switch-to-last-buffer)
 
-(setq avy-all-windows t)
+;; I don't really want to see line numbers
+(setq display-line-numbers-type nil)
 
 ;; Custom bindings
-(map! :nv "s" #'evil-avy-goto-word-or-subword-1)
+;; Easy motion with a single s
+(setq avy-all-windows t)
+(map! :nv "s" #'evil-avy-goto-char-timer)
 
+;; Auto format buffer when saving
 (add-hook! js-mode prettier-js-mode)
 (add-hook! web-mode prettier-js-mode)
+(add-hook! typescript-mode prettier-js-mode)
 
-;; To make typescript work
+;; To make typescript work in Emacs
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
 
 ;; General config
