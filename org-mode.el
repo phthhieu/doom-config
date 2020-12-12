@@ -1,5 +1,6 @@
 ;;; org-mode.el -*- lexical-binding: t; -*-
 
+;; Config org-protocol https://github.com/alphapapa/org-protocol-capture-html#1-add-protocol-handler
 (server-start)
 (require 'org-protocol)
 
