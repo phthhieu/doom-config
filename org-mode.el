@@ -44,7 +44,7 @@
   (setq
     org-download-image-org-width 300
     org-download-delete-image-after-download t
-    org-download-link-format "[[file:./images/%s]]\n"
+    org-download-link-format "[[file:%s]]"
     org-download-method 'directory)
   (setq-default org-download-image-dir "./images"))
 
