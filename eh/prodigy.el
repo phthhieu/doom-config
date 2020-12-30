@@ -44,11 +44,11 @@
     :kill-process-buffer-on-stop t)
 
   (prodigy-define-service
-    :name "Auth"
-    :command "sh"
-    :args '("./run.sh")
+    :name "Auth gRPC"
+    :command "bundle"
+    :args '("exec" "eh_protobuf" "start" "-c" "./config/environment.rb")
     :cwd "~/Documents/workspace/EH/auth"
-    :tags '(sh)
+    :tags '(grpc)
     :stop-signal 'int
     :kill-process-buffer-on-stop t)
 

@@ -24,7 +24,7 @@
 (after! org
   (setq evil-org-key-theme '(navigation insert textobjects additional calendar todo))
   (setq org-agenda-files '("~/Dropbox/notes"))
-  (require 'org-download);; Need to install org download via M-x package-install RET org-download RET
+  (require 'org-download)
   (setq org-capture-templates
     `(
        ("n"

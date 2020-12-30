@@ -59,3 +59,4 @@
 (package! git-link)
 (package! git-timemachine)
 (package! git-messenger)
+(package! org-download)

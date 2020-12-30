@@ -75,12 +75,31 @@
 ;; Auto format buffer when saving
 (add-hook! js-mode prettier-js-mode)
 (add-hook! web-mode prettier-js-mode)
-(add-hook! typescript-mode prettier-js-mode)
+(add-hook! typescript-mode prettier-js-mode) ;; remember to install ts-ls by using lsp-install-server
 
-;; To make typescript work in Emacs
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
-
-;; General config
-(load! "org-mode")
 ;; Load custom config for EH projects
 (load! "eh/prodigy")
+;; General config
+(load! "org-mode")
+
+;; Open in fullscreen
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+;; Use bundle exec to run rubocop
+(after! ruby-mode
+  (setq-hook! 'ruby-mode-hook
+    flycheck-command-wrapper-function (lambda (command)
+                                        (append '("bundle" "exec") command))))
+
+;; Make eslint work with flycheck on js2/ts mode
+
+(defun js-config ()
+  (flycheck-disable-checker 'lsp-ui)
+  (flycheck-select-checker 'javacript-eslint)
+  )
+
+(add-hook 'js2-mode-hook #'js-config)
+
+;; To make typescript work in Emacs
+;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+;; (add-hook 'typescript-mode-hook #'js-config)
