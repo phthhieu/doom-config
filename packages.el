@@ -59,4 +59,9 @@
 (package! git-link)
 (package! git-timemachine)
 (package! git-messenger)
+
+;; Using org-mode better
 (package! org-download)
+
+;; Test better
+(package! jest)
