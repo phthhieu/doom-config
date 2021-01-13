@@ -35,7 +35,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type "relative")
+(setq display-line-numbers-type nil)
 
 ;; Local leader key
 (setq doom-localleader-key ",")
@@ -57,21 +57,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(defun switch-to-last-buffer ()
-  (interactive)
-  (switch-to-buffer nil))
-
-;; To go to previous buffer pretty easy
-(global-set-key (kbd "C-<backspace>") 'switch-to-last-buffer)
-
-;; I don't really want to see line numbers
-(setq display-line-numbers-type nil)
-
-;; Custom bindings
-;; Easy motion with a single s
-(setq avy-all-windows t)
-(map! :nv "s" #'evil-avy-goto-char-timer)
-
 ;; Auto format buffer when saving
 (add-hook! js-mode prettier-js-mode)
 (add-hook! web-mode prettier-js-mode)
@@ -81,6 +66,7 @@
 (load! "eh/prodigy")
 ;; General config
 (load! "org-mode")
+(load! "custom-binding")
 
 ;; Open in fullscreen
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
