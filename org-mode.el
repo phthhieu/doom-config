@@ -67,3 +67,12 @@
         :file-name "%<%Y-%m-%d>"
         :head "#+TITLE: %<%Y-%m-%d>\n#+TODO: TODO IN-PROGRESS IN-REVIEW | DONE\n\n* TODO Check Calendar\n* TODO Check mailbox https://mail.google.com/mail/u/1/#inbox")))
   )
+
+;; Config ob tmux
+(after! ob-tmux
+  (setq org-babel-default-header-args:tmux
+    '((:results . "silent")
+       (:session . "default")
+       (:socket  . nil)))
+  (setq org-babel-tmux-session-prefix "")
+  (setq org-babel-tmux-location "/usr/local/bin/tmux"))
