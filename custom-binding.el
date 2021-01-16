@@ -102,3 +102,8 @@ Returns:
 
   (:after prodigy :map prodigy-view-mode-map
     "x" #'prodigy-view-clear-buffer))
+
+;; Terminal
+(map!
+ :nv "C-<f6>"       #'+vterm/toggle
+ )
