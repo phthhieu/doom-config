@@ -46,6 +46,8 @@
     org-download-delete-image-after-download t
     org-download-link-format "[[file:%s]]"
     org-download-method 'directory)
+  (if (equal system-type 'darwin)
+      (setq org-download-screenshot-method "screencapture -i %s"))
   (setq-default org-download-image-dir "./images"))
 
 (after! org-roam
