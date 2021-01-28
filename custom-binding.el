@@ -68,7 +68,7 @@ Returns:
 
 ;; Prodigy evil collection
 (map!
-  :nv "C-<f5>"       #'prodigy
+  :nv "<f5>"       #'prodigy
   (:after prodigy :map prodigy-mode-map
     "o"         #'prodigy-browse
     "q"         #'quit-window
@@ -105,5 +105,5 @@ Returns:
 
 ;; Terminal
 (map!
- :nv "C-<f6>"       #'+vterm/toggle
+ :nv "<f6>"       #'multi-vterm-project
  )

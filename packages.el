@@ -63,3 +63,6 @@
 ;; Using org-mode better
 (package! org-download)
 (package! ob-tmux)
+
+;; Better vterm
+(package! multi-vterm)
