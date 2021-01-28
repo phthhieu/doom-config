@@ -27,7 +27,7 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
 ;; I wanna have bigger font
-(setq doom-font (font-spec :family "Hack" :size 24))
+(setq doom-font (font-spec :family "Hack" :size 20))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -86,6 +86,5 @@
 
 (add-hook 'js2-mode-hook #'js-config)
 
-;; To make typescript work in Emacs
-;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
-;; (add-hook 'typescript-mode-hook #'js-config)
+;; I need more time to see what just happens
+(setq evil-goggles-duration 1)
